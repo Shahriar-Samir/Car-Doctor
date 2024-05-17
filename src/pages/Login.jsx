@@ -1,6 +1,7 @@
 import { FaFacebook } from "react-icons/fa";
 import {GrLinkedin } from "react-icons/gr";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
@@ -11,7 +12,7 @@ const Login = () => {
     </div>
     <div className="card shrink-0 w-full max-w-sm bg-base-100 border border-black">
       <form className="card-body">
-      <h1 className="text-3xl font-semibold text-center mb-10">Login</h1>
+      <h1 className="text-3xl font-semibold text-center mb-5">Login</h1>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -30,12 +31,13 @@ const Login = () => {
         <div className="form-control mt-6">
           <button className="btn btn-primary">Sign In</button>
         </div>
-        <p className="text-center mt-2 text-sm">Or Sign In with</p>
+        <p className="text-center mt-4 text-sm">Or Sign In with</p>
         <div className="flex justify-center gap-5 mt-2">
             <FaFacebook className="text-2xl text-blue-600" role="button"/>
             <GrLinkedin  className="text-2xl text-blue-700" role="button"/>
             <FcGoogle className="text-2xl" role="button"/>
         </div>
+        <p className="text-center text-sm mt-4">Already have an account? <Link to='/signup'><span className="text-common-color font-semibold">Register</span></Link></p>
       </form>
     </div>
   </div>
