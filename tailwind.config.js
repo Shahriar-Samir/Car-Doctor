@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         'common-color': '#FF3811',
+        'cc-hover': '#933b2afd',
       }
     },
   },
