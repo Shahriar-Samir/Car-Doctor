@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'common-color': '#FF3811',
+      }
+    },
   },
   plugins: [
     require('daisyui'),
@@ -14,3 +18,4 @@ export default {
     themes: ["light", "dark"],
   },
 }
+
