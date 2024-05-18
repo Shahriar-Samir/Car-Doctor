@@ -2,16 +2,17 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import {toast, ToastContainer} from 'react-toastify'
 import { FiArrowRight } from "react-icons/fi";
+import { Link } from 'react-router-dom';
 
 const Service = () => {
     const [data,setData] = useState([])
     useEffect(()=>{
-            axios.get('services.json')
+            axios.get('http://localhost:5000/services')
             .then(res=>{
                 setData(res.data)
             })
             .catch(()=>{
-                toast.success("Something went wrong")
+                toast.error("Something went wrong")
             })
     },[])
 
@@ -36,7 +37,7 @@ const Service = () => {
 export default Service;
 
 const Card = ({item})=>{
-    const {img, title} = item
+    const {img, title, _id} = item
     return(
         <div className="card bg-base-100 border border-gray-400">
   <figure className="px-5 pt-5">
@@ -49,7 +50,7 @@ const Card = ({item})=>{
  
     <div className="card-actions justify-between w-full items-center font-semibold mt-5">  
     <h1 className='text-common-color'>Price: $20.00</h1>
-      <button className="text-common-color text-xl"><FiArrowRight /></button>
+      <Link to={`/checkout/${_id}`}><button className="text-common-color text-xl"><FiArrowRight /></button></Link>
     </div>
   </div>
 </div>
