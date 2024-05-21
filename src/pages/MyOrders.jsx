@@ -8,14 +8,14 @@ const MyOrders = () => {
     const {user} = useContext(AuthContext)
     const [data,setData] = useState([])
     useEffect(()=>{
-        axios.get(`http://localhost:5000/myOrders?email=${user?.email}`)
+        axios.get(`http://localhost:5000/myOrders?email=${user?.email}`, {withCredentials:true})
         .then(res=>{
             setData(res.data)
         })
         .catch(err=>{
             console.log(err)
         })
-    })
+    },[])
     const cancelOrder = (_id)=>{
         axios.delete(`http://localhost:5000/deleteBooking?email=${user?.email}&_id=${_id}`)
         .then(res=>{

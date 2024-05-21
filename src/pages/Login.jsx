@@ -1,13 +1,17 @@
 import { FaFacebook } from "react-icons/fa";
 import {GrLinkedin } from "react-icons/gr";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const Login = () => {
     const {signInWithGoogle,signInWithFacebook,signInWithLinkedIn,signInHandler,loading,setLoading} = useContext(AuthContext)
+
+  const location = useLocation()
+  const navigate = useNavigate()
 
     const handleSubmit = (e)=>{
         e.preventDefault()
@@ -18,11 +22,13 @@ const Login = () => {
         .then(()=>{
           setLoading(false)
           toast.success('You have successfully signed in')
+            navigate(location?.state ? location?.state : '/')
       })
       .catch(err=>{
         setLoading(false)
          if(err.message === 'Firebase: Error (auth/invalid-credential).'){
           toast.error('Your provided email or password is incorrect')
+
          }
          else{
           toast.error('Something went wrong')
@@ -35,6 +41,7 @@ const Login = () => {
         .then(()=>{
             setLoading(false)
             toast.success('You have successfully signed in')
+            navigate(location?.state ? location?.state : '/')
         })
         .catch(()=>{
             setLoading(false)
@@ -46,6 +53,7 @@ const Login = () => {
         .then(()=>{
             setLoading(false)
             toast.success('You have successfully signed in')
+            navigate(location?.state ? location?.state : '/')
         })
         .catch(()=>{
             setLoading(false)

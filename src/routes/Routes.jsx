@@ -7,6 +7,7 @@ import Register from "../pages/Register"
 import axios from "axios"
 import CheckOut from "../pages/CheckOut"
 import MyOrders from "../pages/MyOrders"
+import PrivateRoute from "../Providers/PrivateRoute"
 
 
 const router = createBrowserRouter([{
@@ -31,14 +32,14 @@ const router = createBrowserRouter([{
       },
       {
         path: '/checkout/:id',
-        element: <CheckOut/>,
+        element: <PrivateRoute><CheckOut/></PrivateRoute>,
         loader: ({params})=>{
           return axios.get(`http://localhost:5000/services/${params.id}`)
         }
       },
       {
         path: '/myOrders',
-        element: <MyOrders/>
+        element: <PrivateRoute><MyOrders/></PrivateRoute>
       }
     ]
 }])
