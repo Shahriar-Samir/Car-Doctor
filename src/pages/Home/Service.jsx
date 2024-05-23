@@ -13,8 +13,9 @@ const Service = () => {
             .then(res=>{
                 setData(res.data)
             })
-            .catch(()=>{
+            .catch((err)=>{
                 toast.error("Something went wrong")
+                console.log(err.message)
             })
     },[])
 

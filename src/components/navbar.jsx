@@ -4,6 +4,7 @@ import { IoIosSearch } from "react-icons/io";
 import { AuthContext } from '../Providers/AuthProvider';
 import { useContext } from 'react';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 const Navbar = () => {
     const {logOutHandler,user} = useContext(AuthContext)

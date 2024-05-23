@@ -34,7 +34,7 @@ const router = createBrowserRouter([{
         path: '/checkout/:id',
         element: <PrivateRoute><CheckOut/></PrivateRoute>,
         loader: ({params})=>{
-          return axios.get(`http://localhost:5000/services/${params.id}`)
+          return axios.get(`https://car-doctor-backend-murex.vercel.app/services/${params.id}`)
         }
       },
       {
