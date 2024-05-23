@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-      <div className='w-full bg-black text-white'>
+      <div className='w-full bg-black text-white mt-28'>
   <footer className="footer p-10 mx-auto w-full max-w-[1200px]">
   <aside>
   <img src='/icons/logo2.svg'/>

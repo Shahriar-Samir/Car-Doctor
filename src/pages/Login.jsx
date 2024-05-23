@@ -4,11 +4,11 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
 
 const Login = () => {
-    const {signInWithGoogle,signInWithFacebook,signInWithLinkedIn,signInHandler,loading,setLoading} = useContext(AuthContext)
+    const {signInWithGoogle,signInWithFacebook,signInWithLinkedIn,signInHandler,loading,setLoading,user} = useContext(AuthContext)
 
   const location = useLocation()
   const navigate = useNavigate()
@@ -22,7 +22,9 @@ const Login = () => {
         .then(()=>{
           setLoading(false)
           toast.success('You have successfully signed in')
+          setTimeout(()=>{
             navigate(location?.state ? location?.state : '/')
+        },3000)
       })
       .catch(err=>{
         setLoading(false)
@@ -41,7 +43,9 @@ const Login = () => {
         .then(()=>{
             setLoading(false)
             toast.success('You have successfully signed in')
-            navigate(location?.state ? location?.state : '/')
+            setTimeout(()=>{
+              navigate(location?.state ? location?.state : '/')
+          },3000)
         })
         .catch(()=>{
             setLoading(false)
@@ -53,7 +57,9 @@ const Login = () => {
         .then(()=>{
             setLoading(false)
             toast.success('You have successfully signed in')
-            navigate(location?.state ? location?.state : '/')
+            setTimeout(()=>{
+                navigate(location?.state ? location?.state : '/')
+            },3000)
         })
         .catch(()=>{
             setLoading(false)
@@ -62,7 +68,8 @@ const Login = () => {
     }
 
     return (
-        <div className="hero min-h-screen">
+        <div className="hero min-h-screen mt-20">
+          <ToastContainer/>
   <div className="hero-content flex-col lg:flex-row gap-20">
     <div className="text-center lg:text-left">
         <img src="/images/login/login.svg"/>
@@ -103,3 +110,4 @@ const Login = () => {
 };
 
 export default Login;
+

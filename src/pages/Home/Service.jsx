@@ -1,13 +1,15 @@
-import axios from 'axios';
+
 import React, { useEffect, useState } from 'react';
 import {toast, ToastContainer} from 'react-toastify'
 import { FiArrowRight } from "react-icons/fi";
 import { Link } from 'react-router-dom';
+import useAxios from '../../Hooks/useAxios';
 
 const Service = () => {
     const [data,setData] = useState([])
+    const axios = useAxios()
     useEffect(()=>{
-            axios.get('http://localhost:5000/services')
+            axios.get('/services')
             .then(res=>{
                 setData(res.data)
             })
@@ -22,7 +24,7 @@ const Service = () => {
             <h1 className='text-common-color font-semibold text-center'>Service</h1>
             <h1 className='text-4xl font-bold mt-4 text-center'>Our Service Area</h1>
             <p className='text-center max-w-[700px] mx-auto mt-5'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla obcaecati reprehenderit reiciendis excepturi maxime dolor aspernatur aperiam sint laudantium magni?</p>
-            <div className='grid grid-cols-3 gap-10 mt-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 mt-10 mx-auto w-10/12'>
                 {
                     data.map(item=>{
                         return <Card item={item} key={item._id}/>
@@ -39,9 +41,9 @@ export default Service;
 const Card = ({item})=>{
     const {img, title, _id} = item
     return(
-        <div className="card bg-base-100 border border-gray-400">
+        <div className="card bg-base-100 border border-gray-400 ">
   <figure className="px-5 pt-5">
-    <img src={img} alt="Shoes" className="rounded-xl h-[250px]" />
+    <img src={img} alt="Shoes" className="rounded-xl w-full h-[250px] object-cover" />
   </figure>
   <div className="card-body items-center text-center">
     <div className='flex justify-start w-full'>

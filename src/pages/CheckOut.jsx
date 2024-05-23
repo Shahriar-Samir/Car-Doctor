@@ -1,14 +1,16 @@
-import axios from 'axios';
+
 import React, { useContext, useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import PageBanner from '../components/PageBanner';
 import { AuthContext } from '../Providers/AuthProvider';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
+import useAxios from '../Hooks/useAxios';
 
 const CheckOut = () => {
     const {user} = useContext(AuthContext)
     const {data} = useLoaderData()
     const {title,price,_id,img} = data
+    const axios = useAxios()
 
     const submitOrder = (e) =>{
         e.preventDefault()
@@ -16,6 +18,7 @@ const CheckOut = () => {
         const name = form.name.value
         const date = form.date.value 
         const email = form.email.value
+     
 
         const data = {
             customerName : name,
@@ -26,7 +29,7 @@ const CheckOut = () => {
             service: title,
             image: img
         }
-        axios.post('http://localhost:5000/bookOrder', data)
+        axios.post('/bookOrder', data)
         .then(res=>{
             toast.success('Order booked successfully')
         })
@@ -38,10 +41,11 @@ const CheckOut = () => {
 
     return (
        <div>
+        <ToastContainer/>
         <PageBanner title={'Check Out'}/>
-        <div className='bg-gray-100 p-32 rounded-lg mb-28 mt-28'>
+        <div className='bg-gray-100 p-8 lg:p-32 rounded-lg mb-28 mt-28'>
             <h1 className='text-xl font-bold'>Book Service : {title}</h1>
-         <form className="card-body grid grid-cols-2 gap-10 p-0 mt-5" onSubmit={submitOrder}>
+         <form className="card-body grid grid-cols-1 lg:grid-cols-2 gap-10 p-0 mt-5" onSubmit={submitOrder}>
         <div className="form-control">
           <input type="text" placeholder="Name" defaultValue={user?.displayName} name='name' className="input input-bordered" required />
         </div>
@@ -54,7 +58,7 @@ const CheckOut = () => {
         <div className="form-control">
         <input type='number' name='price' value={price} placeholder='Due Amount' className='input input-bordered' required/>
         </div>
-        <div className="form-control mt-6 w-full col-span-2">
+        <div className="form-control mt-6 w-full col-span-1 lg:col-span-2">
           <button className="btn bg-common-color text-white w-full">Order Confirm</button>
         </div>
       </form>

@@ -56,7 +56,7 @@ const Register = () => {
 
 
     return (
-        <div className="hero min-h-screen">
+        <div className="hero min-h-screen mt-20">
   <div className="hero-content flex-col lg:flex-row gap-20">
     <div className="text-center lg:text-left">
         <img src="/images/login/login.svg"/>

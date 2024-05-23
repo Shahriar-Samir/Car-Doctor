@@ -2,22 +2,28 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+import useAxios from "../Hooks/useAxios";
 
 const MyOrders = () => {
     const {user} = useContext(AuthContext)
+    const axios = useAxios()
     const [data,setData] = useState([])
+    const [count,setCount] = useState(0)
     useEffect(()=>{
-        axios.get(`http://localhost:5000/myOrders?email=${user?.email}`, {withCredentials:true})
+        axios.get(`/myOrders?email=${user?.email}`, {withCredentials:true})
         .then(res=>{
             setData(res.data)
+            setCount(res.data.length)
         })
         .catch(err=>{
             console.log(err)
         })
     },[])
     const cancelOrder = (_id)=>{
-        axios.delete(`http://localhost:5000/deleteBooking?email=${user?.email}&_id=${_id}`)
+        setCount(count-1)
+        document.getElementById(_id).style.display = 'none'
+        axios.delete(`/deleteBooking?email=${user?.email}&_id=${_id}`)
         .then(res=>{
             toast.success("Order canceled")
         })
@@ -29,35 +35,26 @@ const MyOrders = () => {
 
     return (
         <div className="overflow-x-auto mt-16 mb-16">
-        <table className="table">
+          <ToastContainer/>
+      { count> 0 ?<table className="table">
           {/* head */}
           <thead>
             <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
               <th>Name</th>
               <th>Job</th>
               <th>Favorite Color</th>
               <th></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="">
             {/* row 1 */}
           {
-            data.map(item=>{
+       data.map(item=>{
                 return <>
-                  <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
+                  <tr id={item._id}>
               <td>
                 <div className="flex items-center gap-3">
-                    <div className="max-w-[150px]">
+                    <div className="w-[200px] max-w-[150px]">
                       <img className="w-full" src={item.image} />
                     </div>
                   <div>
@@ -75,13 +72,15 @@ const MyOrders = () => {
               </th>
             </tr>
                 </>
-            })
-          }
+            }) 
+          } 
          
           </tbody>
 
           
-        </table>
+        </table> : <div className="h-[50vh]">
+                    <p className="text-center">You have not ordered any service</p>
+                </div>}
       </div>
     );
 };
