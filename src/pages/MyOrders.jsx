@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 import useAxios from "../Hooks/useAxios";
+import { Helmet } from "react-helmet-async";
 
 const MyOrders = () => {
     const {user} = useContext(AuthContext)
@@ -17,7 +18,7 @@ const MyOrders = () => {
             setCount(res.data.length)
         })
         .catch(err=>{
-            console.log(err)
+
         })
     },[])
     const cancelOrder = (_id)=>{
@@ -28,13 +29,15 @@ const MyOrders = () => {
             toast.success("Order canceled")
         })
         .catch(err=>{
-            console.log(err)
             toast.error('Something went wrong')
         })
     }
 
     return (
         <div className="overflow-x-auto mt-16 mb-16">
+                <Helmet>
+        <title>Car Doctor || My Orders</title>
+      </Helmet>
           <ToastContainer/>
       { count> 0 ?<table className="table">
           {/* head */}

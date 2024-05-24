@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const {signInWithGoogle,signInWithFacebook,signInWithLinkedIn,signInHandler,loading,setLoading,user} = useContext(AuthContext)
@@ -69,6 +70,9 @@ const Login = () => {
 
     return (
         <div className="hero min-h-screen mt-20">
+                <Helmet>
+        <title>Car Doctor || Login</title>
+      </Helmet>
           <ToastContainer/>
   <div className="hero-content flex-col lg:flex-row gap-20">
     <div className="text-center lg:text-left">

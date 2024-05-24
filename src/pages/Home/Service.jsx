@@ -15,7 +15,6 @@ const Service = () => {
             })
             .catch((err)=>{
                 toast.error("Something went wrong")
-                console.log(err.message)
             })
     },[])
 

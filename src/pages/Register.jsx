@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
 
@@ -57,6 +58,9 @@ const Register = () => {
 
     return (
         <div className="hero min-h-screen mt-20">
+                <Helmet>
+        <title>Car Doctor || Register</title>
+      </Helmet>
   <div className="hero-content flex-col lg:flex-row gap-20">
     <div className="text-center lg:text-left">
         <img src="/images/login/login.svg"/>

@@ -5,6 +5,7 @@ import PageBanner from '../components/PageBanner';
 import { AuthContext } from '../Providers/AuthProvider';
 import { toast, ToastContainer } from 'react-toastify';
 import useAxios from '../Hooks/useAxios';
+import { Helmet } from 'react-helmet-async';
 
 const CheckOut = () => {
     const {user} = useContext(AuthContext)
@@ -41,6 +42,9 @@ const CheckOut = () => {
 
     return (
        <div>
+              <Helmet>
+        <title>Car Doctor || Checkout</title>
+      </Helmet>
         <ToastContainer/>
         <PageBanner title={'Check Out'}/>
         <div className='bg-gray-100 p-8 lg:p-32 rounded-lg mb-28 mt-28'>

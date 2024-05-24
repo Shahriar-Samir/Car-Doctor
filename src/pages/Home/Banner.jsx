@@ -31,42 +31,62 @@ const Banner = () => {
             </div>
       </SwiperSlide>
       <SwiperSlide className="bg-[url('/images/banner/2.jpg')] bg-cover ">
-            <div className='flex justify-start items-center w-full h-full'>
-            <div>
-            <h1>Affordable Price For Car Servicing</h1>
-            <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+            <div className='flex justify-center items-center md:justify-start md:ms-32 w-full h-full '>
+            <div className='self-center'>
+            <h1 className='text-white font-bold text-5xl md:text-7xl w-11/12 text-center md:text-left max-w-[350px] leading-[50px] md:leading-[80px] mx-auto md:m-0'>Affordable Price For Car Servicing</h1>
+            <p className='w-11/12 max-w-[500px] text-white mt-5 text-center md:text-start mx-auto md:m-0 md:m-5'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+           <div className="flex gap-3 mt-5 justify-center md:justify-start">
+           <button className="bg-common-color text-white rounded-md p-3">Discover More</button>
+            <button className="text-white border-2 border-white p-3 rounded-md">Latest Project</button>
+           </div>
             </div>
             </div>
       </SwiperSlide>
       <SwiperSlide className="bg-[url('/images/banner/3.jpg')] bg-cover ">
-            <div className='flex justify-start items-center w-full h-full'>
-            <div>
-            <h1>Affordable Price For Car Servicing</h1>
-            <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+            <div className='flex justify-center items-center md:justify-start md:ms-32 w-full h-full '>
+            <div className='self-center'>
+            <h1 className='text-white font-bold text-5xl md:text-7xl w-11/12 text-center md:text-left max-w-[350px] leading-[50px] md:leading-[80px] mx-auto md:m-0'>Affordable Price For Car Servicing</h1>
+            <p className='w-11/12 max-w-[500px] text-white mt-5 text-center md:text-start mx-auto md:m-0 md:m-5'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+           <div className="flex gap-3 mt-5 justify-center md:justify-start">
+           <button className="bg-common-color text-white rounded-md p-3">Discover More</button>
+            <button className="text-white border-2 border-white p-3 rounded-md">Latest Project</button>
+           </div>
             </div>
             </div>
       </SwiperSlide>
       <SwiperSlide className="bg-[url('/images/banner/4.jpg')] bg-cover ">
-            <div className='flex justify-start items-center w-full h-full'>
-            <div>
-            <h1>Affordable Price For Car Servicing</h1>
-            <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+            <div className='flex justify-center items-center md:justify-start md:ms-32 w-full h-full '>
+            <div className='self-center'>
+            <h1 className='text-white font-bold text-5xl md:text-7xl w-11/12 text-center md:text-left max-w-[350px] leading-[50px] md:leading-[80px] mx-auto md:m-0'>Affordable Price For Car Servicing</h1>
+            <p className='w-11/12 max-w-[500px] text-white mt-5 text-center md:text-start mx-auto md:m-0 md:m-5'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+           <div className="flex gap-3 mt-5 justify-center md:justify-start">
+           <button className="bg-common-color text-white rounded-md p-3">Discover More</button>
+            <button className="text-white border-2 border-white p-3 rounded-md">Latest Project</button>
+           </div>
             </div>
             </div>
       </SwiperSlide>
       <SwiperSlide className="bg-[url('/images/banner/5.jpg')] bg-cover ">
-            <div className='flex justify-start items-center w-full h-full'>
-            <div>
-            <h1>Affordable Price For Car Servicing</h1>
-            <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+            <div className='flex justify-center items-center md:justify-start md:ms-32 w-full h-full '>
+            <div className='self-center'>
+            <h1 className='text-white font-bold text-5xl md:text-7xl w-11/12 text-center md:text-left max-w-[350px] leading-[50px] md:leading-[80px] mx-auto md:m-0'>Affordable Price For Car Servicing</h1>
+            <p className='w-11/12 max-w-[500px] text-white mt-5 text-center md:text-start mx-auto md:m-0 md:m-5'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+           <div className="flex gap-3 mt-5 justify-center md:justify-start">
+           <button className="bg-common-color text-white rounded-md p-3">Discover More</button>
+            <button className="text-white border-2 border-white p-3 rounded-md">Latest Project</button>
+           </div>
             </div>
             </div>
       </SwiperSlide>
       <SwiperSlide className="bg-[url('/images/banner/6.jpg')] bg-cover ">
-            <div className='flex justify-start items-center w-full h-full'>
-            <div>
-            <h1>Affordable Price For Car Servicing</h1>
-            <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+            <div className='flex justify-center items-center md:justify-start md:ms-32 w-full h-full '>
+            <div className='self-center'>
+            <h1 className='text-white font-bold text-5xl md:text-7xl w-11/12 text-center md:text-left max-w-[350px] leading-[50px] md:leading-[80px] mx-auto md:m-0'>Affordable Price For Car Servicing</h1>
+            <p className='w-11/12 max-w-[500px] text-white mt-5 text-center md:text-start mx-auto md:m-0 md:m-5'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+           <div className="flex gap-3 mt-5 justify-center md:justify-start">
+           <button className="bg-common-color text-white rounded-md p-3">Discover More</button>
+            <button className="text-white border-2 border-white p-3 rounded-md">Latest Project</button>
+           </div>
             </div>
             </div>
       </SwiperSlide>
